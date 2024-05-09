@@ -158,9 +158,9 @@ It’s easy to Z Order the data in a Delta table. It’s not easy to Z Order the
 
 ## Delta Lake vs. Parquet: renaming columns
 
-Parquet files are immutable, so you can’t modify the file to update the column name. If you want to change the column name, read it into a DataFrame, change the name, and then rewrite the entire file. Renaming a column can be an expensive computation.
+Parquet files are immutable, so you can’t modify the file to update the column name. If you want to change the column name, you will have to read the file into a DataFrame, change the column name, and then rewrite the entire file. Renaming a column can be an expensive computation.
 
-Delta Lake abstracted the concept of physical column names and logical column names. The physical column name is the actual column name in the Parquet file. The logical column name is the column name humans use when referencing the column.
+Delta Lake abstracts the concept of physical column names and logical column names. The physical column name is the actual column name in the Parquet file. The logical column name is the column name humans use when referencing the column.
 
 Delta Lake lets users quickly rename columns by changing the logical column name, a pure-metadata operation. It’s just a simple entry in the Delta transaction log.
 
